@@ -40,9 +40,3 @@ class Attribute:
 
             print(fonts.bold() + '-', end='')
         print(fonts.default(), end='')
-
-'''
-# test
-health = Attribute()
-health.value_bar()
-'''
