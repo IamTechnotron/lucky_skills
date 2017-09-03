@@ -323,17 +323,3 @@ class MagicCard:
             self.io.speech_tra("Stop fooling around....", 1)
 
         return usr_data
-'''
-# test
-data = ['avik', 5, 6, 1000, 3, [0, 1, 1, 0, 2], 0, 5, 9]
-mc = MagicCard()
-mc.display_card_resource(data)
-data = mc.gen_mc_force(data)
-
-print()
-# mc.gen_mc_normal()
-mc.display_card_resource(data)
-print()
-mc.gen_mc_normal(data)
-mc.display_card_resource(data)
-'''
