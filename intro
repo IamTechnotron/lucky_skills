@@ -1,0 +1,43 @@
+* Python interface loaded
+* Sysinfo plugin loaded
+* Perl interface loaded
+* Checksum plugin loaded
+* Lua version 1.3/5.1 loaded.
+* FiSHLiM plugin loaded
+* Looking up chat.timeserver.net
+* Connecting to chat.timeserver.net (208.054.200.232:6697)
+* * Certification info:
+*   Subject:
+*     CN=freewill.timeserver.net
+*   Issuer:
+*     C=US
+*     O=Let's Encrypt
+*     CN=Let's Encrypt Authority X3
+*   Public key algorithm: rsaEncryption (4096 bits)
+*   Sign algorithm sha256WithRSAEncryption
+* * Cipher info:
+*   Version: TLSv1/SSLv3, cipher DHE-RSA-AES256-GCM-SHA384 (256 bits)
+* Connected. Now logging in.
+* *** Looking up your hostname...
+* *** Checking Ident
+* *** No Ident response
+......................
+INCOMING TRANSITION...
+...
+...
+~
+Hello
+Can anybody in on that side see this?
+>>>
+
+Great...
+By the way, I'm Bill Zuckerberg.
+I'm a programmer!
+At this point you should also know, I'm from a distant future, where human time travelling is till a research subject,
+but terminal screens of computers can be transported though time-line!
+So, welcome to the future, a future, who's future lies in your hand!
+Please help me!
+Will you?
+>>>
+
+So then let me tell you the whole story....
