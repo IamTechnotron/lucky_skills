@@ -5,7 +5,6 @@ from time import sleep
 import War
 import fonts
 
-
 war = War.War()
 
 war.set_stage()
@@ -68,7 +67,6 @@ def resolve_menu():
         input("Press any key to continue!")
         system('clear')
         resolve_menu()
-
 
 
     # Story
