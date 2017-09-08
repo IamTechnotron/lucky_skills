@@ -449,7 +449,7 @@ class War:
         # Ask if user wants to activate any MC or not
         # if yes, take action
         if [n for n in self.usr_data[5] if n >= 2]:
-            self.io.speech_bill("Should we generate a magic card?[Then we can't activate any other card this round")
+            self.io.speech_bill("[Should we generate a magic card? Then we can't activate any other card this round")
             ch = input(fonts.font_light('aqua') + '>>> ' + fonts.default())
             if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
                 self.io.speech_bill('I want a magic card no!', 0)
@@ -461,8 +461,7 @@ class War:
                                     'Didn\'t got you! skipping it!')
 
         elif self.mc.check_cards_if_any(self.usr_data):
-            print(fonts.font_light('aqua') + '[Bill: Wanna activate any of our Magic Cards? Now would be a great time!]'
-                  + fonts.default())
+            print(fonts.font_light('aqua') + '[Bill: Wanna activate any of our Magic Cards?]' + fonts.default())
 
             ch = input(fonts.font_light('aqua') + '>>> ' + fonts.default())
             if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
@@ -471,7 +470,7 @@ class War:
                 self.io.speech_bill('Okay!')
             else:
                 self.io.speech_bill('[Bill: There might have been an transmission error in the Time Line.'
-                                    'Didn\'t got you!')
+                                    'Didn\'t got you!]')
         self.battle()
 
         # check if health is 1
