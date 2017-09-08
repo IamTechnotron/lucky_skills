@@ -21,7 +21,7 @@ def menu():
         print(" 2. " + fonts.font_light('yellow') + "LOAD SAVED GAME" + fonts.default())
         print(" 3. " + fonts.font_light('blue') + "HIGH SCORE" + fonts.default())
         print(" 4. " + fonts.font_dark('purple') + "STORY" + fonts.default())
-        print(" 5. " + fonts.font_dark('white') + "INSTRUCTIONS" + fonts.default())
+        print(" 5. " + fonts.font_light('white') + "INSTRUCTIONS" + fonts.default())
         print(" 6. " + fonts.font_light('red') + "EXIT" + fonts.default())
         print()
         choice = int(input(">>> "))
