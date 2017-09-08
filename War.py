@@ -78,8 +78,14 @@ class War:
                         for line in file:
                             if line[0] == '*':
                                 print(line)
+                                sleep(randint(0, 1))
+                                continue
                             sleep(1)
-                            if line[0] == '>':
+
+                            if line[0] == '.':
+                                system('clear')
+
+                            elif line[0] == '>':
                                 ch = input()
                                 if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
                                     continue
@@ -125,7 +131,7 @@ class War:
                             self.io.typel(line, 0.1)
             print()
         except KeyboardInterrupt:
-            print("\n\n* Keyboard Interrupt... *")
+            print("\n\n * Keyboard Interrupt... *\n")
 
     def display_resource(self):
         """
