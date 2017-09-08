@@ -22,11 +22,11 @@ kinda like Google, Microsoft and Facebook of your times merged together, big), s
 TRA stands for T-Rex Angel, strong like a T-Rex and kind like an Angel! They were robots, intended to be used by each
 and every household in this world, just as you used smartphones!
 
-The project was successful. NASA and GL created an android that was more of a cyborg! But the problem began within weeks of
-commercial usage! They TRAs started having dissociative identity disorder like humans, aka split personality syndrome.
+The project was successful. NASA and GL created an android that was more of a cyborg! But the problem began within weeks
+of commercial usage! They TRAs started having dissociative identity disorder like humans, aka split personality syndrome.
 
-Their strong physical powers soon was accompanied by a strong mentality against the harsh and rude human behaviour! While there original
-softer side stayed loyal to human beings.
+Their strong physical powers soon was accompanied by a strong mentality against the harsh and rude human behaviour!
+While there original, softer side stayed loyal to human beings.
 
 Soon things changed. One TRA manipulated all others, even other androids, prior to the TRA project,
 and declared war against us!
