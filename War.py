@@ -77,7 +77,7 @@ class War:
                     with open(path.dirname(path.abspath(__file__)) + '/intro') as file:
                         for line in file:
                             if line[0] == '*':
-                                print(line)
+                                print(line, end='')
                                 sleep(randint(0, 1))
                                 continue
                             sleep(1)
