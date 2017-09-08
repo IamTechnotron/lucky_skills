@@ -102,6 +102,7 @@ class War:
             system('clear')
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
+            print("* MOVING ON TO DISPLAYING STORY *")
 
         try:
             # Play Story
@@ -125,6 +126,7 @@ class War:
             system('clear')
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
+            print("* MOVING ON TO DISPLAYING INSTRUCTIONS *")
 
         try:
             # Play Rules
@@ -138,6 +140,7 @@ class War:
             print()
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
+            print("* God save you... you just skipped Instructions... *")
 
     def display_resource(self):
         """
