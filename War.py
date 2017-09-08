@@ -185,7 +185,8 @@ class War:
         if int(self.usr_data[4]) >= 0:
             # print(fonts.bar_light('grey'), ' ' + fonts.default() + '  ', end='')
             print(fonts.font_dark(self.mc.color_code[self.mc.card_list[self.usr_data[4]]]) + fonts.underline() +
-                  fonts.bold() + '* ' + self.mc.card_list[self.usr_data[4]], '*' + fonts.font_dark('grey') + ' is active!' +
+                  fonts.bold() + '* ' + self.mc.card_list[self.usr_data[4]], '*' + fonts.font_dark('grey') +
+                  ' is active!' +
                   fonts.default())
             # print(fonts.bar_light('grey'), ' ', end='')
 
@@ -353,7 +354,7 @@ class War:
                 value = str(value) + '\n'
                 file.write(value)
 
-    def high_score(self, disp=1):
+    def high_score(self):
         """
         If game_stats exists, compare with game data and store it, if needed!
         If game_stats doesn't exist, store the data unconditionally!
@@ -375,7 +376,7 @@ class War:
         index = 0
         with open((self.dir_path + 'game_stats'), 'w') as file:
             for line in l[0:end]:
-                file.write(l[index][0] + '~' + l[index][1] + '\n')
+                file.write(line[index][0] + '~' + line[index][1] + '\n')
             index += 1
 
     def resume(self):
