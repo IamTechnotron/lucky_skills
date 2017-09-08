@@ -212,7 +212,7 @@ class War:
         # User input
         self.usr_input = int(input(fonts.font_dark('green') + "Your Chance: " + fonts.default()))
 
-        while self.usr_input > 9 or self.usr_input <= 0:
+        while self.usr_input > 19 or self.usr_input <= 0:
             print(fonts.bar_dark('red') + '* Please enter correctly *' + fonts.default())
             self.usr_input = int(input(fonts.font_dark('green') + "Your Chance: " + fonts.default()))
 
