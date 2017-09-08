@@ -264,7 +264,7 @@ class War:
 
             self.io.speech_tra('haha, I won this round...', 1)
             if self.usr_data[4] == 0:
-                self.io.speech_bill('Hold Your horses... My have my Shield Card...')
+                self.io.speech_bill('Hold Your horses... My have my Shield Card...', 1)
                 self.io.speech_tra('Damn you, Humaaan!', 1)
                 self.usr_data[4] = -1
 
