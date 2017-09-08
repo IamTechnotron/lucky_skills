@@ -513,7 +513,7 @@ class War:
 
         elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
             # Deploy more dialogs
-            self.io.speech_bill('Great! you are not tired yet or are you soo confident?')
+            self.io.speech_bill('Great! Lets move on!')
             # self.io.speech_bill('Wow, humans of past were soo cool. So let\'s bring that Machine to senses.')
 
         else:
