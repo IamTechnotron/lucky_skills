@@ -35,7 +35,9 @@ class CustomIO:
             This functions waits for a user input for a given period of time.
             :param wait: the waiting time required for input; default is 5 seconds
             :return    : the value entered (if any)
+
             """
+        wait = float(wait)
         if select([stdin], [], [], wait)[0]:
             return stdin.readline().strip()
 
