@@ -122,7 +122,6 @@ class War:
                                 print("Connection Error")
                         else:
                             self.io.typel(line, 0.1)
-
             system('clear')
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
