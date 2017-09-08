@@ -258,7 +258,7 @@ class War:
             :return: None
             """
         usr_input, tra_input = self.usr_input, self.tra_input
-
+        self.inputs()
         # when user looses
         if tra_input > usr_input:
 
@@ -293,7 +293,7 @@ class War:
                     self.io.speech_bill('Heyo TRA, here goes your life point! Haha!', 0)
                     if self.usr_data[1] > 5:
                         self.io.speech_bill('You know what TRA, I\'m loving this game!', 0)
-                        self.io.speech_tra('Don\'t fly too high, Suckerberg!', 1)
+                        self.io.speech_tra('Don\'t fly too high, Zuckerberg!', 1)
                 elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
                     self.io.speech_bill('Great idea! Let\'s this round and increase the Attack point')
                     self.io.speech_bill('I\'ll pass this round!', 0)
