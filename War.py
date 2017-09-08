@@ -233,6 +233,7 @@ class War:
         tra_input_temp = int(randint(1, 90) % 20) or randint(1, 19)
         while self.tra_input == tra_input_temp:
             tra_input_temp = int(randint(1, 90) % 20) or randint(1, 19)
+
         self.tra_input = tra_input_temp
         self.io.speech_tra('I took %d' % self.tra_input, 1)
 
@@ -257,8 +258,10 @@ class War:
                 win_counter = 0
             :return: None
             """
-        usr_input, tra_input = self.usr_input, self.tra_input
+
         self.inputs()
+        usr_input = self.usr_input
+        tra_input = self.tra_input
         # when user looses
         if tra_input > usr_input:
 
