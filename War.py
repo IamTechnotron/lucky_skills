@@ -64,64 +64,68 @@ class War:
 
     def play_story(self, intro=0):
 
-        system('clear')
-        # Play Intro:
-        if intro == 1:
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
+        try:
+
+            system('clear')
+            # Play Intro:
+            if intro == 1:
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
+                    print("Data Error")
+                    sleep(1)
+                    exit()
+                else:
+                    with open(path.dirname(path.abspath(__file__)) + '/intro') as file:
+                        for line in file:
+                            if line[0] == '*':
+                                print(line)
+                            sleep(1)
+                            if line[0] == '>':
+                                ch = input()
+                                if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
+                                    continue
+                                elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
+                                    print("sorry I bothered you!.... ")
+                                    sleep(1)
+                                    print("Connection Terminated by other user!")
+                                    exit()
+                                else:
+                                    print("Connection Error")
+                                    exit()
+                            else:
+                                self.io.typel(line, 0.1)
+
+            system('clear')
+            # Play Story
+            if not path.isfile(path.dirname(path.abspath(__file__)) + '/story'):
                 print("Data Error")
-                sleep(1)
-                exit()
             else:
-                with open(path.dirname(path.abspath(__file__)) + '/intro') as file:
+                with open(path.dirname(path.abspath(__file__)) + '/story') as file:
                     for line in file:
-                        if line[0] == '*':
-                            print(line)
-                        sleep(1)
+
                         if line[0] == '>':
                             ch = input()
                             if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
                                 continue
                             elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
                                 print("sorry I bothered you!.... ")
-                                sleep(1)
                                 print("Connection Terminated by other user!")
-                                exit()
                             else:
                                 print("Connection Error")
-                                exit()
                         else:
                             self.io.typel(line, 0.1)
 
-        system('clear')
-        # Play Story
-        if not path.isfile(path.dirname(path.abspath(__file__)) + '/story'):
-            print("Data Error")
-        else:
-            with open(path.dirname(path.abspath(__file__)) + '/story') as file:
-                for line in file:
-
-                    if line[0] == '>':
-                        ch = input()
-                        if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
-                            continue
-                        elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
-                            print("sorry I bothered you!.... ")
-                            print("Connection Terminated by other user!")
-                        else:
-                            print("Connection Error")
-                    else:
-                        self.io.typel(line, 0.1)
-
-        system('clear')
-        # Play Rules
-        if intro == 1:
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
-                print("Data Error")
-            else:
-                with open(path.dirname(path.abspath(__file__)) + '/rules') as file:
-                    for line in file:
-                        self.io.typel(line, 0.1)
-        print()
+            system('clear')
+            # Play Rules
+            if intro == 1:
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
+                    print("Data Error")
+                else:
+                    with open(path.dirname(path.abspath(__file__)) + '/rules') as file:
+                        for line in file:
+                            self.io.typel(line, 0.1)
+            print()
+        except KeyboardInterrupt:
+            print("\n\n* Keyboard Interrupt... *")
 
     def display_resource(self):
         """
