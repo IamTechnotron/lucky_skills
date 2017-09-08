@@ -65,7 +65,6 @@ class War:
     def play_story(self, intro=0):
 
         try:
-
             system('clear')
             # Play Intro:
             if intro == 1:
@@ -101,6 +100,10 @@ class War:
                                 self.io.typel(line, 0.1)
 
             system('clear')
+        except KeyboardInterrupt:
+            print("\n\n* Keyboard Interrupt... *\n")
+
+        try:
             # Play Story
             if not path.isfile(path.dirname(path.abspath(__file__)) + '/story'):
                 print("Data Error")
@@ -121,6 +124,10 @@ class War:
                             self.io.typel(line, 0.1)
 
             system('clear')
+        except KeyboardInterrupt:
+            print("\n\n* Keyboard Interrupt... *\n")
+
+        try:
             # Play Rules
             if intro == 1:
                 if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
@@ -131,7 +138,7 @@ class War:
                             self.io.typel(line, 0.1)
             print()
         except KeyboardInterrupt:
-            print("\n\n * Keyboard Interrupt... *\n")
+            print("\n\n* Keyboard Interrupt... *\n")
 
     def display_resource(self):
         """
