@@ -522,7 +522,8 @@ class War:
         sleep(3)
 
         self.io.speech_bill('Would you like to quit? is yes, press y/Y with in 3 sec!')
-        exc = self.io.timer_input('>>> ')
+        print('>>> ', end='')
+        exc = self.io.timer_input()
         if exc == 'e' or exc == 'E':
             self.save_game()
             self.io.speech_bill("Hope to see you soon!")
