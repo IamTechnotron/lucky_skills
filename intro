@@ -19,8 +19,8 @@
 *   Version: TLSv1/SSLv3, cipher DHE-RSA-AES256-GCM-SHA384 (256 bits)
 * Connected. Now logging in.
 * *** Looking up your hostname...
-* *** Checking Ident
-* *** No Ident response
+* *** Checking Indent
+* *** No Indent response
 .
 INCOMING TRANSMISSION...
 Hello
