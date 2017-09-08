@@ -503,7 +503,7 @@ class War:
                 self.io.speech_bill('Come on, get real. the game has just begun!', 0)
 
         # prompt to save game
-        self.io.speech_bill('Hey, lets make a check point here. My time machine can handle that.')
+        self.io.speech_bill('Hey, lets make a check point here.')
         self.io.speech_bill('What do you say?')
         ch = input(fonts.font_light('aqua') + '>>> ' + fonts.default())
         if ch.upper() == 'Y' or ch.upper() == 'YES' or ch.upper() == 'YUP':
