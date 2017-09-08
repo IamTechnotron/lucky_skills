@@ -43,7 +43,7 @@ def resolve_menu():
 
     # New Game
     if choice == 1:
-        if not path.isdir(war.dir_path):
+        if path.isdir(war.dir_path):
             print("Entering story mode...")
             war.play_story(1)
         war.new_game()
