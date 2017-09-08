@@ -21,18 +21,17 @@ def menu():
         print(" 2. " + fonts.font_light('yellow') + "LOAD SAVED GAME" + fonts.default())
         print(" 3. " + fonts.font_light('blue') + "HIGH SCORE" + fonts.default())
         print(" 4. " + fonts.font_dark('purple') + "STORY" + fonts.default())
-        print(" 5. " + fonts.font_light('red') + "EXIT" + fonts.default())
+        print(" 5. " + fonts.font_dark('white') + "INSTRUCTIONS" + fonts.default())
+        print(" 6. " + fonts.font_light('red') + "EXIT" + fonts.default())
         print()
         choice = int(input(">>> "))
 
     else:
-        print(" 2. " + fonts.font_light('blue') + "HIGH SCORE" + fonts.default())
-        print(" 3. " + fonts.font_dark('purple') + "STORY" + fonts.default())
-        print(" 4. " + fonts.font_light('red') + "EXIT" + fonts.default())
+        print(" 2. " + fonts.font_light('red') + "EXIT" + fonts.default())
         print()
         choice = int(input(">>> "))
-        if choice >= 2:
-            choice += 1
+        if choice == 2:
+            choice = 6
 
     return choice
 
@@ -77,13 +76,29 @@ def resolve_menu():
         system('clear')
         resolve_menu()
 
-    # Exit
+    # Instructions
     elif choice == 5:
+        try:
+            if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
+                print("Data Error")
+            else:
+                with open(path.dirname(path.abspath(__file__)) + '/rules') as file:
+                    for line in file:
+                        war.io.typel(line, 0.1)
+            print()
+        except KeyboardInterrupt:
+            print("\n\n* Keyboard Interrupt... *\n")
+        input("Press any key to continue!")
+        system('clear')
+        resolve_menu()
+
+    # Exit
+    elif choice == 6:
         print("* Hope to see you soon *")
         exit()
 
     else:
-        print('I haven\' programed any option for this input, sorry!')
+        print('This program haven\'t been programed with any operation for this input, sorry!')
         system('clear')
         resolve_menu()
 
