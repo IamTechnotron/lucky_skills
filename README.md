@@ -18,4 +18,4 @@ Best Configuration for display in terminal
 **Please please please, Use a black background** and Xterm scheme.
 You can also use a little bit of transperency, about 10% would be best!
 
-*(To change your terninal settings, go to Edit > Preferences > Colors.)*
+*(To change your terninal settings, go to Edit > Profile Preferences > Colors.)*
