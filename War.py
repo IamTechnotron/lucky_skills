@@ -230,9 +230,9 @@ class War:
             self.usr_data[9].pop(2)
 
         # computer input
-        tra_input_temp = int(randint(1, 90) % 20) or randint(1, 19)
-        while self.tra_input == tra_input_temp:
-            tra_input_temp = int(randint(1, 90) % 20) or randint(1, 19)
+        tra_input_temp = int(randint(1, 90) % 20) or randint(10, 19)
+        while self.tra_input == tra_input_temp or tra_input_temp < 10:
+            tra_input_temp = int(randint(1, 90) % 20) or randint(10, 19)
 
         self.tra_input = tra_input_temp
         self.io.speech_tra('I took %d' % self.tra_input, 1)
