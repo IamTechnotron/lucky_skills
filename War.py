@@ -103,7 +103,7 @@ class War:
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
             print("* MOVING ON TO DISPLAYING STORY *")
-
+        sleep(1)
         try:
             # Play Story
             if not path.isfile(path.dirname(path.abspath(__file__)) + '/story'):
@@ -127,6 +127,7 @@ class War:
         except KeyboardInterrupt:
             print("\n\n* Keyboard Interrupt... *\n")
             print("* MOVING ON TO DISPLAYING INSTRUCTIONS *")
+        sleep(1)
 
         try:
             # Play Rules
