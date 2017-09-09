@@ -306,7 +306,7 @@ class War:
                     else:
                         print("* Attack Point is already Full *")
                 else:
-                    self.io.speech_bill('Damn, again that Time Machine Glitched!')
+                    self.io.speech_bill('Damn, again this Time Machine Glitched!')
                     self.io.speech_bill('Sorry didn\'t got you!. Anyway, passing this round!')
                     if self.usr_data[2] < 10:
                         self.usr_data[2] += 1
@@ -399,47 +399,53 @@ class War:
 
             :return: the list user data if the game can be resumed.
         """
-        print(" * Please wait, resuming game... *")
-        sleep(5)
-        index = 0
-        if path.isfile(self.dir_path + 'saved_game.txt'):
-            with open(self.dir_path + 'saved_game.txt') as file:
-                for line in file:
-                    if index == 0:
-                        self.usr_data[index] = line[0:-1]
-                    elif index == 5 or index == 9:
-                        l = [int(x) for x in line if x not in ['[', ']', ',', ' ', '\n']]
-                        self.usr_data[index] = l
-                    else:
-                        self.usr_data[index] = int(line[:-1])
-                    index += 1
-        else:
-            print("* There is no saved file. Can't resume game. *")
-            print("* Starting a new game! *")
-            self.usr_data = ['Bill Zuckerberg', 6, 3, 100, 0, [0, 0, 1, 0, 0], 0, 0, 7]
+        try:
 
-        while self.usr_data[1] != 0 or self.usr_data[8] != 0:
-            self.new_round()
-        if self.usr_data[8] == 0:
-            system('clear')
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
-                print('YOU WON')
-            else:
-                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_win')) as file:
+            print(" * Please wait, resuming game... *")
+            sleep(5)
+            index = 0
+            if path.isfile(self.dir_path + 'saved_game.txt'):
+                with open(self.dir_path + 'saved_game.txt') as file:
                     for line in file:
-                        self.io.speech_bill(line)
-            sleep(2)
+                        if index == 0:
+                            self.usr_data[index] = line[0:-1]
+                        elif index == 5 or index == 9:
+                            l = [int(x) for x in line if x not in ['[', ']', ',', ' ', '\n']]
+                            self.usr_data[index] = l
+                        else:
+                            self.usr_data[index] = int(line[:-1])
+                        index += 1
+            else:
+                print("* There is no saved file. Can't resume game. *")
+                print("* Starting a new game! *")
+                self.usr_data = ['Bill Zuckerberg', 6, 3, 100, 0, [0, 0, 1, 0, 0], 0, 0, 7]
 
-        elif self.usr_data[1] == 0:
-            system('clear')
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose'):
-                print("YOU LOST")
-            else:
-                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose')) as file:
-                    for line in file:
-                        self.io.speech_bill(line)
-            sleep(2)
-        self.high_score()
+            while self.usr_data[1] != 0 or self.usr_data[8] != 0:
+                self.new_round()
+            if self.usr_data[8] == 0:
+                system('clear')
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
+                    print('YOU WON')
+                else:
+                    with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_win')) as file:
+                        for line in file:
+                            self.io.speech_bill(line)
+                sleep(2)
+
+            elif self.usr_data[1] == 0:
+                system('clear')
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose'):
+                    print("YOU LOST")
+                else:
+                    with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose')) as file:
+                        for line in file:
+                            self.io.speech_bill(line)
+                sleep(2)
+            self.high_score()
+        except KeyboardInterrupt:
+            print(fonts.font_dark('red') + "\n\n* Keyboard Interrupt *\n" + fonts.default())
+            print(fonts.font_light('green') + "* Auto-saving Game Progress *\n\n" + fonts.default())
+            self.save_game()
 
     def new_round(self):
         """
@@ -472,8 +478,7 @@ class War:
             elif ch.upper() == 'N' or ch.upper() == 'NO' or ch.upper() == 'NOPE':
                 self.io.speech_bill('Okay!')
             else:
-                self.io.speech_bill('[Bill: There might have been an transmission error in the Time Line.'
-                                    'Didn\'t got you! skipping it!')
+                self.io.speech_bill('[Bill: Didn\'t got you! skipping it!')
 
         elif self.mc.check_cards_if_any(self.usr_data):
             print(fonts.font_light('aqua') + '[Bill: Wanna activate any of our Magic Cards?]' + fonts.default())
@@ -531,7 +536,7 @@ class War:
             # self.io.speech_bill('Wow, humans of past were soo cool. So let\'s bring that Machine to senses.')
 
         else:
-            self.io.speech_bill('God damn this Time Machine. Sorry din\'t got that. Saving Anyway.')
+            self.io.speech_bill('Sorry din\'t got that. Saving Anyway.')
             self.save_game()
         sleep(3)
 
@@ -548,30 +553,35 @@ class War:
 
         :return:
         """
-        self.io.speech_bill("Whats your name?")
-        name = input(fonts.font_light('aqua') + '>>> ' + fonts.default())
-        self.usr_data[0] = name
+        try:
+            self.io.speech_bill("Whats your name?")
+            name = input(fonts.font_light('aqua') + '>>> ' + fonts.default())
+            self.usr_data[0] = name
 
-        self.set_stage()
-        while self.usr_data[1] != 0 or self.usr_data[8] != 0:
-            self.new_round()
-        if self.usr_data[8] == 0:
-            system('clear')
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
-                print('YOU WON')
-            else:
-                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_win')) as file:
-                    for line in file:
-                        self.io.speech_bill(line)
-            sleep(2)
+            self.set_stage()
+            while self.usr_data[1] != 0 or self.usr_data[8] != 0:
+                self.new_round()
+            if self.usr_data[8] == 0:
+                system('clear')
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
+                    print('YOU WON')
+                else:
+                    with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_win')) as file:
+                        for line in file:
+                            self.io.speech_bill(line)
+                sleep(2)
 
-        elif self.usr_data[1] == 0:
-            system('clear')
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose'):
-                print("YOU LOST")
-            else:
-                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose')) as file:
-                    for line in file:
-                        self.io.speech_bill(line)
-            sleep(2)
-        self.high_score()
+            elif self.usr_data[1] == 0:
+                system('clear')
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose'):
+                    print("YOU LOST")
+                else:
+                    with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose')) as file:
+                        for line in file:
+                            self.io.speech_bill(line)
+                sleep(2)
+            self.high_score()
+        except KeyboardInterrupt:
+            print(fonts.font_dark('red') + "\n\n* Keyboard Interrupt *\n" + fonts.default())
+            print(fonts.font_light('green') + "* Auto-saving Game Progress *\n\n" + fonts.default())
+            self.save_game()

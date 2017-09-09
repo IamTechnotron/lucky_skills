@@ -37,69 +37,73 @@ def menu():
 
 
 def resolve_menu():
+    try:
+        choice = menu()
 
-    choice = menu()
+        # New Game
+        if choice == 1:
+            if not path.isfile(war.dir_path + 'saved_game.txt'):
+                print("Entering story mode...")
+                war.play_story(1)
+            war.new_game()
 
-    # New Game
-    if choice == 1:
-        if not path.isfile(war.dir_path + 'saved_game.txt'):
-            print("Entering story mode...")
-            war.play_story(1)
-        war.new_game()
+        # Load Saved Game
+        elif choice == 2:
+            war.resume()
 
-    # Load Saved Game
-    elif choice == 2:
-        war.resume()
-
-    # High Score
-    elif choice == 3:
-        if not path.isfile(war.dir_path + 'stats'):
-            print("No High Score as of now!")
-        else:
-            system('clear')
-            print('Score\t\tName')
-            with open((war.dir_path + 'game_stats')) as file:
-                for line in file:
-                    s, n = line.split('~')
-                    print(s + '\t\t' + n)
-        print('\n\n')
-        input("Press any key to continue!")
-        system('clear')
-        resolve_menu()
-
-    # Story
-    elif choice == 4:
-        war.play_story()
-        print('\n\n')
-        input("Press any key to continue!")
-        system('clear')
-        resolve_menu()
-
-    # Instructions
-    elif choice == 5:
-        try:
-            if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
-                print("Data Error")
+        # High Score
+        elif choice == 3:
+            if not path.isfile(war.dir_path + 'stats'):
+                print("No High Score as of now!")
             else:
-                with open(path.dirname(path.abspath(__file__)) + '/rules') as file:
+                system('clear')
+                print('Score\t\tName')
+                with open((war.dir_path + 'game_stats')) as file:
                     for line in file:
-                        war.io.typel(line, 0.1)
-            print()
-        except KeyboardInterrupt:
-            print("\n\n* Keyboard Interrupt... *\n")
-        input("Press any key to continue!")
-        system('clear')
-        resolve_menu()
+                        s, n = line.split('~')
+                        print(s + '\t\t' + n)
+            print('\n\n')
+            input("Press any key to continue!")
+            system('clear')
+            resolve_menu()
 
-    # Exit
-    elif choice == 6:
-        print("* Hope to see you soon *")
-        exit()
+        # Story
+        elif choice == 4:
+            war.play_story()
+            print('\n\n')
+            input("Press any key to continue!")
+            system('clear')
+            resolve_menu()
 
-    else:
-        print('This program haven\'t been programed with any operation for this input, sorry!')
-        system('clear')
-        resolve_menu()
+        # Instructions
+        elif choice == 5:
+            try:
+                if not path.isfile(path.dirname(path.abspath(__file__)) + '/rules'):
+                    print("Data Error")
+                else:
+                    with open(path.dirname(path.abspath(__file__)) + '/rules') as file:
+                        for line in file:
+                            war.io.typel(line, 0.1)
+                print()
+            except KeyboardInterrupt:
+                print("\n\n* Keyboard Interrupt... *\n")
+            input("Press any key to continue!")
+            system('clear')
+            resolve_menu()
+
+        # Exit
+        elif choice == 6:
+            print("* Hope to see you soon *")
+            exit()
+
+        else:
+            print('This program haven\'t been programed with any operation for this input, sorry!')
+            system('clear')
+            resolve_menu()
+
+    except KeyboardInterrupt:
+        print("\n\n SEE YOU SOON... \n")
+
 
 print(fonts.font_dark('green') + "\nPlease switch to full screen, if not already!\n" + fonts.default())
 sleep(3)
