@@ -401,8 +401,9 @@ class War:
         """
         try:
 
-            print(" * Please wait, resuming game... *")
-            sleep(5)
+            print(" * Please wait, resuming game", end='')
+            self.io.typel('... *', 1)
+            print()
             index = 0
             if path.isfile(self.dir_path + 'saved_game.txt'):
                 with open(self.dir_path + 'saved_game.txt') as file:
@@ -446,6 +447,8 @@ class War:
             print(fonts.font_dark('red') + "\n\n* Keyboard Interrupt *\n" + fonts.default())
             print(fonts.font_light('green') + "* Auto-saving Game Progress *\n\n" + fonts.default())
             self.save_game()
+            sleep(2)
+            system('clear')
 
     def new_round(self):
         """
@@ -546,6 +549,8 @@ class War:
         if exc == 'y' or exc == 'Y':
             self.save_game()
             self.io.speech_bill("Hope to see you soon!")
+            sleep(2)
+            system('clear')
             exit()
 
     def new_game(self):
@@ -585,3 +590,5 @@ class War:
             print(fonts.font_dark('red') + "\n\n* Keyboard Interrupt *\n" + fonts.default())
             print(fonts.font_light('green') + "* Auto-saving Game Progress *\n\n" + fonts.default())
             self.save_game()
+            sleep(2)
+            system('clear')

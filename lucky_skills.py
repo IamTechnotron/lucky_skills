@@ -94,6 +94,8 @@ def resolve_menu():
         # Exit
         elif choice == 6:
             print("* Hope to see you soon *")
+            sleep(2)
+            system('clear')
             exit()
 
         else:
@@ -103,8 +105,11 @@ def resolve_menu():
 
     except KeyboardInterrupt:
         print("\n\n SEE YOU SOON... \n")
+        sleep(2)
+        system('clear')
 
+if __name__:
+    print(fonts.font_dark('green') + "\nPlease switch to full screen, if not already!\n" + fonts.default())
+    sleep(3)
+    resolve_menu()
 
-print(fonts.font_dark('green') + "\nPlease switch to full screen, if not already!\n" + fonts.default())
-sleep(3)
-resolve_menu()
