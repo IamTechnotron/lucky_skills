@@ -422,10 +422,24 @@ class War:
             self.new_round()
         if self.usr_data[8] == 0:
             system('clear')
-            print('YOU WON')
+            if not path.isfile(path.dirname(path.abspath(__file__)) + '/intro'):
+                print('YOU WON')
+            else:
+                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_win')) as file:
+                    for line in file:
+                        self.io.speech_bill(line)
+            sleep(2)
+
         elif self.usr_data[1] == 0:
             system('clear')
-            print("YOU LOOSE")
+            if not path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose'):
+                print("YOU LOST")
+            else:
+                with open(path.isfile(path.dirname(path.abspath(__file__)) + '/extro_loose')) as file:
+                    for line in file:
+                        self.io.speech_bill(line)
+            sleep(2)
+        self.high_score()
 
     def new_round(self):
         """
