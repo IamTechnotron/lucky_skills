@@ -67,7 +67,6 @@ def resolve_menu():
         system('clear')
         resolve_menu()
 
-
     # Story
     elif choice == 4:
         war.play_story()
