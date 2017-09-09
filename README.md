@@ -7,6 +7,7 @@ How to play?
 ------------
 * Download this game: either clone the repo, or download the zip and extract.
 * In the *directory where the file is saved*, open terminal and type:  >>> python3 lucky_skills.py
+
 ( You can also type >>> chmod +x lucky_skills.py && ./lucky_skills.py )
 
 That's it! as simple as that!
